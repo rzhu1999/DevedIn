@@ -1,11 +1,15 @@
+// connection logic
+
 const mongoose = require('mongoose');
-const config = require('config');
+const config = require('config');           //grab that string that we just put inside of the default.json
 const db = config.get('mongoURI');
 
-//mongoose.connect(db)
+// mongoose.connect(db)
 
+// connect to mongoDB (async / await)
 const connectDB = async () => {
     try {
+        // since mongoose.connect returns a promise, put await before it
         await mongoose.connect(db, {
             useNewUrlParser: true,
             useUnifiedTopology: true
