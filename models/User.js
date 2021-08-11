@@ -3,25 +3,25 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
-    // enable us to attach a profile image to our email 
+    // enable us to attach a profile image to our email
     avatar: {
-        type: String
+        type: String,
     },
     date: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 });
 
 module.exports = User = mongoose.model('user', UserSchema);

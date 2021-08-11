@@ -6,7 +6,8 @@ const db = config.get('mongoURI');
 
 // mongoose.connect(db)
 
-// connect to mongoDB (async / await)
+// Connect to mongoDB (async / await)
+//
 const connectDB = async () => {
   try {
     // since mongoose.connect returns a promise, put await before it
