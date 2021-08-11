@@ -1,5 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://rui:979108448@devedin.86d07.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-
-    "jwtSecret": "secrettokenforrui"
-}
