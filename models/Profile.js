@@ -105,11 +105,9 @@ const ProfileSchema = new mongoose.Schema({
         instagram: {
             type: String,
         },
-        /*
         wechat: {
-            type: String
-        } 
-        */
+            type: String,
+        },
     },
     date: {
         type: Date,
