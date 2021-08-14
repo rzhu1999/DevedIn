@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require('express-validator'); // It's a post request that takes data
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
@@ -13,6 +13,8 @@ const User = require('../../models/User');
 // @access  Private
 router.get('/me', auth, async (req, res) => {
     try {
+        // Pertain to Profile model user filed -> ObjectId of the user
+        // populate(A,B): populate with B from collection A
         const profile = await Profile.findOne({ user: req.user.id }).populate(
             'user',
             ['name', 'avatar']
@@ -34,6 +36,8 @@ router.get('/me', auth, async (req, res) => {
 // @route   POST api/profile
 // @desc    Create/update user profile
 // @access  Private
+
+// Use both auth middleware and the validation middleware
 router.post(
     '/',
     [
@@ -77,12 +81,13 @@ router.post(
         if (githubusername) profileFields.githubusername = githubusername;
         if (skills) {
             profileFields.skills = skills
-                .split(',')
-                .map((skill) => skill.trim());
+                .split(',') // Turn the String into Array
+                .map((skill) => skill.trim()); // Remove extra space: Map through the Array
         }
+        // console.log(profileFields.skills);
 
         // Build social object
-        profileFields.social = {}; // Otherwise social.xxx will be undefined
+        profileFields.social = {}; // Set .social an object first otw social.xxx will be undefined
         if (youtube) profileFields.social.youtube = youtube;
         if (twitter) profileFields.social.twitter = twitter;
         if (facebook) profileFields.social.facebook = facebook;
@@ -90,11 +95,12 @@ router.post(
         if (instagram) profileFields.social.instagram = instagram;
         if (wechat) profileFields.social.wechat = wechat;
 
+        // Update & Insert the data
         try {
-            let profile = await Profile.findOne({ user: req.user.id });
+            let profile = await Profile.findOne({ user: req.user.id }); // Find by the user
 
             if (profile) {
-                // Update
+                // Update with profile variable
                 profile = await Profile.findOneAndUpdate(
                     { user: req.user.id },
                     { $set: profileFields },
@@ -104,7 +110,7 @@ router.post(
                 return res.json(profile);
             }
 
-            // Create
+            // Otw, create with same profile variable
             profile = new Profile(profileFields);
             await profile.save();
             res.json(profile);
@@ -115,4 +121,41 @@ router.post(
     }
 );
 
+// @route   GET api/profile
+// @desc    Get all profiles
+// @access  Public
+router.get('/', async (req, res) => {
+    try {
+        const profiles = await Profile.find().populate('user', [
+            'name',
+            'avatar',
+        ]);
+        res.json(profiles);
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// @route   GET api/profile/user/:user_id
+// @desc    Get profile by user ID
+// @access  Public
+router.get('/user/:user_id', async (req, res) => {
+    try {
+        const profile = await Profile.findOne({
+            user: req.params.user_id,
+        }).populate('user', ['name', 'avatar']);
+
+        if (!profile) {
+            return res.status(400).json({ msg: 'Profile not found' });
+        }
+        res.json(profile);
+    } catch (err) {
+        console.log(err.message);
+        if (err.kind == 'ObjectId') {
+            return res.status(400).json({ msg: 'Profile not found' });
+        }
+        res.status(500).send('Server Error');
+    }
+});
 module.exports = router;
