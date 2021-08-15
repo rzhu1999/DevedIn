@@ -24,4 +24,5 @@ const UserSchema = new mongoose.Schema({
     },
 });
 
+// For the .populate() function to work, the ref parameter should be the same as the first argument when making the mongoose model.
 module.exports = User = mongoose.model('user', UserSchema);
