@@ -31,6 +31,23 @@ const PostSchema = new Schema({
                 type: Schema.Types.ObjectId,
                 ref: 'user',
             },
+            text: {
+                type: String,
+                required: true,
+            },
+            avatar: {
+                type: String,
+            },
+            date: {
+                type: Date,
+                default: Date.now,
+            },
         },
     ],
+    date: {
+        type: Date,
+        default: Date.now,
+    },
 });
+
+module.exports = Post = mongoose.model('post', PostSchema);
