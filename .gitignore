@@ -4,4 +4,4 @@ config/default.json
 .vscode/
 package.json
 package-lock.json
-resources/
+resources/css_html_theme/
