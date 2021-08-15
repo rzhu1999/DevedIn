@@ -9,7 +9,7 @@ const Post = require('../../models/Post');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
-// @route   POST api/posts
+// @route   POST api/post
 // @desc    Create a post
 // @access  Private (You have to login to create a post)
 router.post(
@@ -41,7 +41,7 @@ router.post(
     }
 );
 
-// @route   GET api/posts
+// @route   GET api/post
 // @desc    Get all posts
 // @access  Private (You have to login to view the post page)
 router.get('/', auth, async (req, res) => {
@@ -56,7 +56,7 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
-// @route   GET api/posts/:id
+// @route   GET api/post/:id
 // @desc    Get a post by id
 // @access  Private (You have to login to view the post page)
 router.get('/:id', auth, async (req, res) => {
@@ -78,9 +78,9 @@ router.get('/:id', auth, async (req, res) => {
     }
 });
 
-// @route   DELETE api/posts
+// @route   DELETE api/post
 // @desc    Delete a post by id
-// @access  Private (You have to login to view the post page)
+// @access  Private
 router.delete('/:id', auth, async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
@@ -106,4 +106,66 @@ router.delete('/:id', auth, async (req, res) => {
     }
 });
 
+// @route   PUT api/post/like/:id (Since we are updating)
+// @desc    Like a post by id
+// @access  Private
+router.put('/like/:id', auth, async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        // Check if the post has already been liked
+        // Req.user.id is a String
+        // If filter() function returns anything, the post has already been liked
+        if (
+            post.likes.filter((like) => like.user.toString() === req.user.id)
+                .length > 0
+        ) {
+            return res.status(400).json({ msg: 'Post already liked' });
+        }
+
+        post.likes.unshift({ user: req.user.id });
+
+        // Save back to the database
+        await post.save();
+
+        res.json(post.likes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// @route   PUT api/post/unlike/:id (Since we are updating)
+// @desc    Unlike a post by id
+// @access  Private
+router.put('/unlike/:id', auth, async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        // Check if the post has actually been liked
+        // Req.user.id is a String
+        // If filter() function returns nothing, the post has not been liked yet
+        if (
+            post.likes.filter((like) => like.user.toString() === req.user.id)
+                .length === 0
+        ) {
+            return res.status(400).json({ msg: 'Post has not yet been liked' });
+        }
+
+        // Get the remove index
+        const removeIndex = post.likes
+            .map((like) => like.user.toString())
+            .indexOf(req.user.id);
+
+        post.likes.splice(removeIndex, 1);
+
+        // Save back to the database
+        await post.save();
+
+        res.json(post.likes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
 module.exports = router;
