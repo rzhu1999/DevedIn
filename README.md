@@ -24,6 +24,7 @@ DevedIn is a full stack JavaScript MERN stack application which is a social netw
 -   Protected our routes and endpoints with **JSON Web Tokens**
 -   Applied extensive **API testing with Postman**
 
-## Front End
+## Front End UI
 
-...
+-   Built with **Sass**
+    ...
