@@ -1,19 +1,45 @@
+// Container
+.container {
+    max-width: $max-width;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
 // Text Styles
 .x-large {
     font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .large {
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .lead {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #fff;
+}
+
+.text-primary {
+    color: $primary-color;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-small {
+    color: #fff;
+    font-size: 0.8rem;
 }
 
 // Backgrounds
@@ -49,6 +75,7 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    font-family: 'Roboto Slab', serif;
     margin-right: 0.5rem;
     outline: none;
     transition: all 0.2s ease-in;
@@ -84,6 +111,28 @@
     &:hover {
         background: lighten($highlight-color, 10%);
         color: #fff;
+    }
+}
+
+// Alerts
+.alert {
+    padding: 0.8rem;
+    margin: 1rem;
+    opacity: 0.9;
+    background: $light-color;
+    color: #333;
+
+    &.alert-primary {
+        @include set-background($primary-color);
+    }
+    &.alert-dark {
+        @include set-background($dark-color);
+    }
+    &.alert-success {
+        @include set-background($success-color);
+    }
+    &.alert-highlight {
+        @include set-background($highlight-color);
     }
 }
 
