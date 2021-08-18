@@ -5,3 +5,4 @@ config/default.json
 package.json
 package-lock.json
 resources/css_html_theme/
+.DS_Store*
