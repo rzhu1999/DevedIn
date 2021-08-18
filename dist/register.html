@@ -32,48 +32,50 @@
                 <li><a href="profiles.html">Developers</a></li>
                 <li><a href="register.html">Register</a></li>
                 <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
         <section class="container">
-            <div class="dark-overlay">
-                <h1 class="large text-white">Sign Up</h1>
-                <p class="lead">
-                    <i class="fas fa-skiing"> Create Your Account</i>
-                </p>
-                <form class="form" action="dashboard.html">
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" required />
-                    </div>
+            <h1 class="large text-white">Sign Up</h1>
+            <p class="lead">
+                <i class="fas fa-skiing"> Create Your Account</i>
+            </p>
+            <form class="form" action="dashboard.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required />
+                </div>
 
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address" />
-                    </div>
-
-                    <p class="text-small">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" />
+                    <small class="form-text">
                         DevedIn uses Gravatar, so use a Gravatar email if you
                         want a profile image
-                    </p>
+                    </small>
+                </div>
 
-                    <div class="form-group">
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            minlength="6"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <input
-                            type="password"
-                            placeholder="Confirm Password"
-                            minlength="6"
-                        />
-                    </div>
-                    <input type="submit" value="Register" class="btn btn" />
-                </form>
-                <p class="my-1">
-                    Already have an account? <a href="login.html">Sign In</a>
-                </p>
-            </div>
+                <div class="form-group">
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        minlength="6"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        minlength="6"
+                    />
+                </div>
+                <input type="submit" value="Register" class="btn btn" />
+            </form>
+            <p class="my-1">
+                Already have an account? <a href="login.html">Sign In</a>
+            </p>
         </section>
         `
     </body>

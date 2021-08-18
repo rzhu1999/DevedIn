@@ -1,5 +1,6 @@
 $primary-color: #242582;
 $dark-color: #553d67;
+$light-color-2: #e6e6fa;
 $light-color: #f4f4f4;
 $highlight-color: #f64c72;
 $success-color: #28a745;
@@ -33,7 +34,6 @@ $spaceamounts: (1, 2, 3, 4, 5);
     // All around Padding
     .p-#{$space} {
         padding: #{$space}rem;
-        color: #fff;
     }
 
     // Vertical Margin
