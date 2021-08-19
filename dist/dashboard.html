@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+            integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE="
+            crossorigin="anonymous"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/style.min.css" />
+        <title>Welcome to DevedIn</title>
+    </head>
+    <body>
+        <nav class="navbar bg-primary">
+            <h1>
+                <a href="dashboard.html">
+                    <i class="fas fa-code"></i> DevedIn
+                </a>
+            </h1>
+            <ul>
+                <li><a href="profiles.html">Developers</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-user"></i>
+                        <span class="hide-sm"> Dashboard</span></a
+                    >
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="hide-sm"> Logout</span></a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <section class="container">
+            <h1 class="large text-x-large"><span>Dashboard</span></h1>
+            <p class="lead"><i class="fas fa-user"></i> Welcome Rui Zhu</p>
+            <div class="dash-buttons">
+                <a href="create-profile.html" class="btn">
+                    <i class="fas fa-user-circle taxt-primary"></i> Edit
+                    Profile</a
+                >
+                <a href="add-experience.html" class="btn">
+                    <i class="fas fa-briefcase taxt-primary"></i> Add
+                    Experience</a
+                >
+                <a href="add-education.html" class="btn">
+                    <i class="fas fa-graduation-cap taxt-primary"></i> Add
+                    Education</a
+                >
+            </div>
+
+            <h2 class="my-2">Experience Credentials</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th class="hide-sm">Title</th>
+                        <th class="hide-sm">Years</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Intel China</td>
+                        <td class="hide-sm">
+                            Software Development Engineer Intern
+                        </td>
+                        <td class="hide-sm">April 2021 - July 2021</td>
+                        <td>
+                            <button class="btn btn-highlight">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 class="my-2">Education Credentials</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>School</th>
+                        <th class="hide-sm">Degree</th>
+                        <th class="hide-sm">Years</th>
+                        <th class="hide-sm">Major</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>University of Southern California</td>
+                        <td class="hide-sm">Masters</td>
+                        <td class="hide-sm">August 2021 - Current</td>
+                        <td>Data Science</td>
+                        <td>
+                            <button class="btn btn-highlight">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Washington</td>
+                        <td class="hide-sm">Bachelors</td>
+                        <td class="hide-sm">August 2017 - March 2021</td>
+                        <td>Applied Mathematics</td>
+                        <td>
+                            <button class="btn btn-highlight">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="my-2">
+                <div class="btn btn-danger">
+                    <i class="fas fa-user-minus"></i> Delete My Account
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

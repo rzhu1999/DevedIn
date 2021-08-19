@@ -10,17 +10,17 @@
 
 // Text Styles
 .x-large {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
     color: #fff;
 }
 
 .large {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: #f64c72;
+    color: #fff;
 }
 
 .lead {
@@ -182,4 +182,20 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.table {
+    th,
+    td {
+        padding: 1rem;
+        text-align: left;
+    }
+
+    th {
+        background: $light-color;
+    }
+
+    td {
+        background: $light-color;
+    }
 }

@@ -20,4 +20,29 @@
         font-size: 1.2rem;
         border: 1px solid #ccc;
     }
+
+    input[type='submit'] {
+        font: inherit;
+    }
+
+    .social-input {
+        display: flex;
+
+        i {
+            padding: 0.5rem;
+            width: 4rem;
+
+            &.fa-facebook {
+                color: #e6e6fa;
+            }
+
+            &.fa-linkedin {
+                color: #e6e6fa;
+            }
+
+            &.fa-instagram {
+                color: #e6e6fa;
+            }
+        }
+    }
 }
