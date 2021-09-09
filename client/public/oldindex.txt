@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+            integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE="
+            crossorigin="anonymous"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="css/style.min.css" />
+        <title>Welcome to DevedIn</title>
+    </head>
+    <body>
+        <nav class="navbar bg-primary">
+            <h1>
+                <a href="dashboard.html">
+                    <i class="fab fa-codepen"></i> DevedIn
+                </a>
+            </h1>
+            <ul>
+                <li><a href="profiles.html">Developers</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section class="landing">
+            <div class="dark-overlay">
+                <div class="landing-inner">
+                    <h1 class="x-large">DevedIn</h1>
+                    <p class="lead">
+                        Create your own developer profile/portfolio, share
+                        posts, and connect with other student developers!
+                    </p>
+                    <div class="buttons">
+                        <a href="register.html" class="btn btn">Sign up</a>
+                        <a href="login.html" class="btn btn">Login in</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="root"></div>
+    </body>
+</html>

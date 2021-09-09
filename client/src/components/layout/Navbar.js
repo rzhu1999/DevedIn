@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav className='navbar bg-dark'>
+        <nav className='navbar bg-primary'>
             <h1>
-                <Link to='index.html'>
-                    <i className='fa fa-code'></i> DevedIn
+                <Link to='/'>
+                    <i className='fab fa-codepen'></i> DevedIn
                 </Link>
             </h1>
             <ul>
                 <li>
-                    <Link to='profiles.html'>Developers</Link>
+                    <a href='#!'>Developers</a>
                 </li>
                 <li>
                     <Link to='/register'>Register</Link>

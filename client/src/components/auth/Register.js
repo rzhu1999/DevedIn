@@ -24,9 +24,11 @@ const Register = () => {
 
     return (
         <Fragment>
-            <h1 className='large text-primary'>Sign Up</h1>
+            <h1 className='large text-x-large'>
+                <span> Sign Up</span>
+            </h1>
             <p className='lead'>
-                <i className='fas fa-user'></i> Create Your Account
+                <i className='fas fa-skiing'> Create Your Account</i>
             </p>
             <form className='form' onSubmit={(e) => onSubmit(e)}>
                 <div className='form-group'>
@@ -39,6 +41,7 @@ const Register = () => {
                         required
                     />
                 </div>
+
                 <div className='form-group'>
                     <input
                         type='email'
@@ -49,17 +52,18 @@ const Register = () => {
                         required
                     />
                     <small className='form-text'>
-                        This site uses Gravatar so if you want a profile image,
-                        use a Gravatar email
+                        DevedIn uses Gravatar, so use a Gravatar email if you
+                        want a profile image
                     </small>
                 </div>
+
                 <div className='form-group'>
                     <input
                         type='password'
                         placeholder='Password'
                         name='password'
-                        minLength='6'
                         value={password}
+                        minLength='6'
                         onChange={(e) => onChange(e)}
                         required
                     />
@@ -69,17 +73,13 @@ const Register = () => {
                         type='password'
                         placeholder='Confirm Password'
                         name='password2'
-                        minLength='6'
                         value={password2}
+                        minLength='6'
                         onChange={(e) => onChange(e)}
                         required
                     />
                 </div>
-                <input
-                    type='submit'
-                    className='btn btn-primary'
-                    value='Register'
-                />
+                <input type='submit' value='Register' className='btn btn' />
             </form>
             <p className='my-1'>
                 Already have an account? <a href='login.html'>Sign In</a>
