@@ -1,4 +1,7 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// import axios from 'axios'; // Access backend
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -13,12 +16,32 @@ const Register = () => {
     const onChange = (e) =>
         setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         if (password !== password2) {
             console.log('Passwords do not match'); // Change to alert later
         } else {
-            console.log(formData);
+            // const newUser = {
+            //     name: name,
+            //     email: email,
+            //     password: password,
+            // };
+
+            // try {
+            //     const config = {
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //         },
+            //     };
+
+            //     const body = JSON.stringify(newUser);
+
+            //     const res = await axios.post('/api/user', body, config);
+            //     console.log(res.data);
+            // } catch (err) {
+            //     console.error(err.response.data);
+            // }
+            console.log('SUCCESS');
         }
     };
 
@@ -28,7 +51,7 @@ const Register = () => {
                 <span> Sign Up</span>
             </h1>
             <p className='lead'>
-                <i className='fas fa-skiing'> Create Your Account</i>
+                <i className='fas fa-skiing'> </i> Create Your Account
             </p>
             <form className='form' onSubmit={(e) => onSubmit(e)}>
                 <div className='form-group'>
@@ -82,7 +105,7 @@ const Register = () => {
                 <input type='submit' value='Register' className='btn btn' />
             </form>
             <p className='my-1'>
-                Already have an account? <a href='login.html'>Sign In</a>
+                Already have an account? <Link to='/login'>Sign In</Link>
             </p>
         </Fragment>
     );
