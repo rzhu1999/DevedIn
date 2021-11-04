@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'; // Fragment won't actually show up in the dom (ghost ele)
+import React, { Fragment, useEffect } from 'react'; // Fragment won't actually show up in the dom (ghost ele)
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -11,25 +11,41 @@ import Alert from './components/layout/Alert';
 // Redux Stuff
 import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 
-const App = () => (
-    <Provider store={store}>
-        <Router>
-            <Fragment>
-                <Navbar />
-                <Route exact path='/' component={Landing} />
-                <section className='container'>
-                    <Alert />
-                    <Switch>
-                        <Route exact path='/register' component={Register} />
-                        <Route exact path='/login' component={Login} />
-                    </Switch>
-                </section>
-            </Fragment>
-        </Router>
-    </Provider>
-);
+if (localStorage.token) {
+    setAuthToken(localStorage.token);
+}
+
+const App = () => {
+    useEffect(() => {
+        store.dispatch(loadUser());
+    }, []); // If you want to run an effect and mount it only once, you can pass an empty array as a second argument. This tells React that our effect doesn't depend on any values from props or state, so it never needs to re-run
+
+    return (
+        <Provider store={store}>
+            <Router>
+                <Fragment>
+                    <Navbar />
+                    <Route exact path='/' component={Landing} />
+                    <section className='container'>
+                        <Alert />
+                        <Switch>
+                            <Route
+                                exact
+                                path='/register'
+                                component={Register}
+                            />
+                            <Route exact path='/login' component={Login} />
+                        </Switch>
+                    </section>
+                </Fragment>
+            </Router>
+        </Provider>
+    );
+};
 
 export default App;
