@@ -146,8 +146,11 @@
     &.alert-success {
         @include set-background($success-color);
     }
-    &.alert-highlight {
+    &.alert-danger {
         @include set-background($highlight-color);
+        &:hover {
+            background: lighten($highlight-color, 10%);
+        }
     }
 }
 
