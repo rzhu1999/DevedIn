@@ -19,7 +19,7 @@ body {
     font-family: 'Roboto Slab', serif;
     font-size: 1rem;
     line-height: 1.6;
-    background-color: #2f2fa2;
+    background-color: #161748;
     color: #333;
 }
 
@@ -108,15 +108,19 @@ img {
 /* Padding */
 .p {
     padding: 0.5rem;
+    color: #fff;
 }
 .p-1 {
     padding: 1rem;
+    color: #fff;
 }
 .p-2 {
     padding: 2rem;
+    color: #fff;
 }
 .p-3 {
     padding: 3rem;
+    color: #fff;
 }
 .py {
     padding: 0.5rem 0;
