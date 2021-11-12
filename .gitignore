@@ -2,7 +2,6 @@ node_modules/
 note/
 config/default.json
 .vscode/
-package.json
-package-lock.json
+
 resources/css_html_theme/
 .DS_Store*
