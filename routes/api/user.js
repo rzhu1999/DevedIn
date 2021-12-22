@@ -83,7 +83,7 @@ router.post(
                 { expiresIn: 360000 }, // Pass in secret expiration
                 (err, token) => {
                     if (err) throw err;
-                    res.json({ msg: `User Registered: ${token}` }); // sent the token back to the client if don't get an error
+                    res.json({ token }); // sent the token back to the client if don't get an error
                 }
             );
         } catch (err) {
