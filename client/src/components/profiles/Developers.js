@@ -27,7 +27,7 @@ const Developers = ({ getProfiles, profile: { profiles, loading } }) => {
                             profile.user.name === 'Rui Zhu' ||
                             profile.user.name === 'Xinyu Hou' ? (
                                 <ProfileItem
-                                    key={profile.id}
+                                    key={profile._id}
                                     profile={profile}
                                 />
                             ) : (
