@@ -28,3 +28,5 @@ DevedIn is a full stack JavaScript MERN stack application which is a social netw
 
 -   Built with **HTML** and **Sass**
 -   ...
+
+## Deploy
