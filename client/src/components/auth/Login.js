@@ -83,7 +83,10 @@ const Login = ({ login, isAuthenticated }) => {
                 <input type='submit' value='Login' className='btn btn' />
             </form>
             <p className='my-1'>
-                Don't have an account? <Link to='/register'>Sign Up</Link>
+                Don't have an account?{' '}
+                <Link to='/register' className='btn btn-light'>
+                    Sign Up
+                </Link>
             </p>
         </Fragment>
     );

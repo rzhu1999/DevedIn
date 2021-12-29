@@ -22,7 +22,7 @@ app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/post', require('./routes/api/post'));
 
 // look for an environment variable called port to use.
-// when we deploy to Hiroku, that's where it's going to get the port number
+// when we deploy to Horoku, that's where it's going to get the port number
 // if there's no environment variable set, it will just default to 5000 locally.
 const PORT = process.env.PORT || 5000;
 

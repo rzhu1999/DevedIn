@@ -41,7 +41,6 @@ const ProfileSchema = new mongoose.Schema({
             },
             location: {
                 type: String,
-                required: true,
             },
             from: {
                 type: Date,
@@ -84,7 +83,7 @@ const ProfileSchema = new mongoose.Schema({
                 type: Boolean,
                 default: false,
             },
-            description: {
+            gpa: {
                 type: String,
             },
         },

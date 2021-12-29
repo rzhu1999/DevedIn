@@ -24,13 +24,11 @@ const CreateProfile = ({ createProfile, history }) => {
 
     const {
         company,
-        website,
         location,
         status,
         skills,
         githubusername,
         bio,
-        twitter,
         facebook,
         linkedin,
         youtube,
@@ -124,7 +122,7 @@ const CreateProfile = ({ createProfile, history }) => {
                 </div>
 
                 <div className='form-group'>
-                    <input
+                    <textarea
                         type='text'
                         placeholder='Introduce Yourself'
                         name='bio'

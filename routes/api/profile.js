@@ -270,7 +270,7 @@ router.put(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const { school, degree, fieldofstudy, from, to, current, description } =
+        const { school, degree, fieldofstudy, from, to, current, gpa } =
             req.body;
 
         const newEdu = {
@@ -280,7 +280,7 @@ router.put(
             from,
             to,
             current,
-            description,
+            gpa,
         };
 
         try {
@@ -329,13 +329,14 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 router.get('/github/:username', async (req, res) => {
     try {
         const options = {
-            uri: `https://api.github.com/users/${
-                req.params.username
-            }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-                'githubClientId'
-            )}&client_secret=${config.get('githubSecret')}`,
+            uri: encodeURI(
+                `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
+            ),
             method: 'GET',
-            headers: { 'user-agent': 'node.js' },
+            headers: {
+                'user-agent': 'node.js',
+                Authorization: `token ${config.get('githubToken')}`,
+            },
         };
 
         request(options, (error, response, body) => {

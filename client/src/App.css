@@ -86,6 +86,14 @@ img {
     color: #fff;
 }
 
+.text-light {
+    color: var(--highlight-color);
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
 .text-dark {
     color: var(--dark-color);
 }
@@ -112,7 +120,6 @@ img {
 }
 .p-1 {
     padding: 1rem;
-    color: #fff;
 }
 .p-2 {
     padding: 2rem;
@@ -160,6 +167,16 @@ img {
     margin: 1rem 0;
     color: #fff;
 }
+
+.my-1-primary {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.my-1-dark {
+    margin: 1rem 0;
+}
+
 .my-2 {
     margin: 2rem 0;
     color: #fff;
@@ -250,7 +267,8 @@ img {
 }
 
 .btn:hover {
-    opacity: 0.8;
+    background: var(--highlight-color);
+    color: #fff;
 }
 
 .bg-light,
@@ -299,6 +317,7 @@ img {
     width: 100%;
     padding: 0.4rem;
     font-size: 1.2rem;
+    font-family: 'Roboto Slab';
     border: 1px solid #ccc;
 }
 
@@ -336,9 +355,14 @@ button {
 .table td {
     padding: 1rem;
     text-align: left;
+    background: var(--light-color);
 }
 
 .table th {
+    background: var(--light-color);
+}
+
+.table tbody {
     background: var(--light-color);
 }
 
@@ -361,7 +385,6 @@ button {
 }
 
 .navbar a:hover {
-    color: #fff;
     padding: 0.45rem;
     margin: 0 0.25rem;
     color: var(--highlight-color);
