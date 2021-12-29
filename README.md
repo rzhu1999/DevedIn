@@ -1,6 +1,9 @@
 # DevedIn
 
-DevedIn is a full stack JavaScript MERN stack application which is a social network for student developers to connect
+DevedIn is a full stack JavaScript MERN stack application which is a social network for student developers to connect.
+Now DevedIn Community has been officially published, thanks to Heroku. You can now view our community at https://devedin-community.herokuapp.com, have fun!
+
+
 
 ## Back end
 
