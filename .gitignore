@@ -1,6 +1,7 @@
 node_modules/
 note/
 config/default.json
+config/production.json
 .vscode/
 
 resources/

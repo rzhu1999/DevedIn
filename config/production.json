@@ -1,7 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://rui:979108448@devedin.86d07.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-
-    "jwtSecret": "secrettokenforrui",
-
-    "githubToken": "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"
-}
