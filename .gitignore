@@ -3,5 +3,5 @@ note/
 config/default.json
 .vscode/
 
-resources/css_html_theme/
+resources/
 .DS_Store*
